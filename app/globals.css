@@ -24,3 +24,145 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Stack Auth embedded forms: style to match site (no Tailwind @apply) */
+.auth-scope h1,
+.auth-scope h2,
+.auth-scope h3 {
+  color: #111;
+  font-weight: 700;
+}
+.auth-scope p,
+.auth-scope span,
+.auth-scope small,
+.auth-scope label {
+  color: #555;
+}
+.auth-scope a {
+  color: #2563eb;
+  text-decoration: none;
+}
+.auth-scope a:hover {
+  text-decoration: underline;
+}
+.auth-scope form {
+  display: grid;
+  gap: 1rem;
+}
+.auth-scope label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.auth-scope input[type="text"],
+.auth-scope input[type="email"],
+.auth-scope input[type="password"],
+.auth-scope input[type="tel"],
+.auth-scope select,
+.auth-scope textarea {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 0.5rem 1rem;
+  color: #111;
+}
+.auth-scope input::placeholder,
+.auth-scope textarea::placeholder {
+  color: #9ca3af;
+}
+.auth-scope input:focus,
+.auth-scope select:focus,
+.auth-scope textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35);
+}
+.auth-scope button[type="submit"],
+.auth-scope button[data-role="primary"],
+.auth-scope .btn-primary {
+  width: 100%;
+  border-radius: 0.5rem;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: background 150ms ease;
+}
+.auth-scope button[type="submit"]:hover,
+.auth-scope button[data-role="primary"]:hover,
+.auth-scope .btn-primary:hover {
+  background: #1d4ed8;
+}
+.auth-scope button[data-role="secondary"],
+.auth-scope .btn-secondary {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+}
+.auth-scope button[data-role="secondary"]:hover,
+.auth-scope .btn-secondary:hover {
+  background: #eff6ff;
+}
+/* Social buttons */
+.auth-scope button[data-provider],
+.auth-scope [data-social-button] {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 0.5rem 1rem;
+  color: #111;
+}
+.auth-scope button[data-provider]:hover,
+.auth-scope [data-social-button]:hover {
+  background: #f9fafb;
+}
+/* Error and helper text */
+.auth-scope .error,
+.auth-scope [data-error],
+.auth-scope .text-error {
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+/* Inputs grouping */
+.auth-scope .field,
+.auth-scope [data-field] {
+  display: grid;
+  gap: 0.25rem;
+}
+/* Divider */
+.auth-scope .divider,
+.auth-scope [data-divider] {
+  margin: 1rem 0;
+  text-align: center;
+  color: #9ca3af;
+}
+
+/* Enhance auth button contrast and override provider styles when needed */
+.auth-scope button[type="submit"],
+.auth-scope button[data-role="primary"],
+.auth-scope .btn-primary {
+  color: #fff !important;
+  background: #2563eb !important;
+}
+/* Ensure inner elements inherit the button color */
+.auth-scope button span,
+.auth-scope button strong,
+.auth-scope button div {
+  color: inherit !important;
+}
+
+/* Specifically fix Microsoft button contrast */
+.auth-scope button[data-provider="microsoft"] {
+  background: #111 !important;
+  border-color: #111 !important;
+  color: #fff !important;
+}
+.auth-scope button[data-provider="microsoft"]:hover {
+  background: #000 !important;
+}
